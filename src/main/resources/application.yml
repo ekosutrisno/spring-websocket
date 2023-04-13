@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: Bataknese App WebSocket
+server:
+  port: 8088
