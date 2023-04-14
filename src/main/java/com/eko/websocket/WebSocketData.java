@@ -23,4 +23,6 @@ public class WebSocketData {
     private LocalDateTime timestamp = LocalDateTime.now();
 
     private String eventName;
+
+    private String bucket;
 }

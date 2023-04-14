@@ -22,9 +22,26 @@ public class WebSocketController {
     @GetMapping
     public void sendToFE(@RequestParam String event) {
         messagingTemplate
-                .convertAndSend("/topic/data",
+                .convertAndSend("/topic/data.admin",
                         WebSocketData.builder()
                                 .eventName(event.toUpperCase())
+                                .bucket("DATA_ADMIN")
+                                .build()
+                );
+
+        messagingTemplate
+                .convertAndSend("/topic/message.admin",
+                        WebSocketData.builder()
+                                .eventName(event.toUpperCase())
+                                .bucket("MESSAGE_ADMIN")
+                                .build()
+                );
+
+        messagingTemplate
+                .convertAndSend("/topic/notification.admin",
+                        WebSocketData.builder()
+                                .eventName(event.toUpperCase())
+                                .bucket("NOTIFICATION_ADMIN")
                                 .build()
                 );
 
