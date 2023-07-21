@@ -18,7 +18,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry
                 .addEndpoint("/ws-app")
-                .setAllowedOriginPatterns("http://localhost:5173", "http://localhost:4173", "http://localhost:{5173,4173}")
+                .setAllowedOriginPatterns("https://batakneseapp.vercel.app", "http://localhost:5173", "http://localhost:4173", "http://localhost:{5173,4173}")
                 .withSockJS();
     }
 
